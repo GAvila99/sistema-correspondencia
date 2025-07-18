@@ -59,4 +59,52 @@ public class SistemaNotificacao{
       System.out.println("Apartamento " + numeroApartamento + " não encontrado no sistema.");
     }
   }
+
+  //metodo principal de execucao
+  public static void main(String[] args){
+    SistemaNotificacao sistema = new SistemaNotifiacacao();
+    Scanner input = new Scanner(System.in);
+    int opcao;
+
+    enqanto opcao for diferente de 0
+    do{
+      System.out.println("\n--- Menu do Sistema --");
+      System.out.println("1. Registrar nova correspondencia");
+      System.out.println("2. Listar correspondencias de um Apto");
+      System.out.println("0. Sair");
+      System.out.print("Escolha uma opção: ");
+
+      try{
+        opcao = Integaer.parseInt(input.nextLine()); //le a opcao como string e convrte para int
+        switch (opcao){
+          case 1:
+            System.out.print("Digite o numero do apartamento: ");
+            int aptoRegistro = Integer.parseInt(input.nextLine());
+            System.out.print("Digite o tipo da correspondencia (Ex: Carta, Pacote): ");
+            String tipoCorrespondencia = input.nextLine();
+            System.out.print("Digite o remetente: ");
+            String remetenteCorrespondencia = input.nextLine();
+            sistema.registraCorrespondencia(aptoRegistro, tipoCorrespondencia, remetenteCorrespondencia);
+            break;
+          case 2:
+            System.out.println("Digite o numero do apartamento para listar: ");
+            int aptoLista = Integer.parseInt(input.nextLine());
+            sistema.ListarCorrespondenciasApartamento(aptoLista);
+            break;
+          case 0:
+            System.out.println("Saindo do sistema!")
+            break;
+          default:
+            System.out.println("opção invalida. Por Favor, digite um numeri.");
+        }
+      }catch (NumberFormatException e){
+        System.out.println("Entrada invalida. Por favor, digite um numero.");
+        opcao = -1;
+      }catch (Exception e){
+        System.out.println("Ocorreu um erro inesperado: " e.getMessage()); //retorna descricao textual do erro
+        opcao = -1;
+      }
+    }while(opcao != 0);
+    input.close();//feha  input(scanner) e libera recurso
+  }
 }
