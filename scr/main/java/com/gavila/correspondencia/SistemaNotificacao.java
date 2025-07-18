@@ -1,7 +1,7 @@
   package com.gavila.correspondencia;
 
-  import com.edifice.correspondencia.model.Apartamento;
-  import com.edifice.correspondencia.model.Correspondencia;
+  import com.gavila.correspondencia.model.Apartamento;
+  import com.gavila.correspondencia.model.Correspondencia;
 
   import java.time.LocalDate; // Para trabalhar com datas de forma mais robusta
   import java.time.format.DateTimeFormatter; // Para formatar a data
