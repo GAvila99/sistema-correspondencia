@@ -1,12 +1,12 @@
-package com.gavila.correpondencia.model;
+package com.gavila.correspondencia.model;
 
-public void Correspondencia(){
+public class Correspondencia{
   private String tipo; //Pode ser pacote, carta, documento
   private String remetente; //Quem enviou, mercado livre, amazom ou fulano de tal
   private String dataChegada;// quando chegou
 
   //metodo construtor correspondencia
-  public Correspondencia(String tipo, String remetente, String, dataChegada){
+  public Correspondencia(String tipo, String remetente, String dataChegada){
     this.tipo = tipo;
     this.remetente = remetente;
     this.dataChegada = dataChegada;

@@ -3,7 +3,7 @@ package com.gavila.correspondencia.model;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Apartamento(){
+public class Apartamento{
   private int numeroAp  ; //numero do apartamento
   private List<Correspondencia> correspondenciasRecebida;
 
@@ -20,18 +20,18 @@ public class Apartamento(){
 
   //Adiciona uma correspondencia ao apartamento
   public void adicionarCorrespondencia(Correspondencia correspondencia){
-    this.correspondenciasRecebidas.add(correspondencia);
-    System.out.println("Correspondencia registrada para o Apartamento " +     this.numero + ": " + correspondencia.getTipo());
+    this.correspondenciasRecebida.add(correspondencia);
+    System.out.println("Correspondencia registrada para o Apartamento " +     this.numeroAp + ": " + correspondencia.getTipo());
   }
 
   //metodo retorna lista de correspondencia
   public List<Correspondencia> getCorrespondencias(){
-    return correspondenciasRecebidas;
+    return correspondenciasRecebida;
   }
 
   //metodo de apresentacao
   public String toString(){
-    return "Apartamento " + numeroAp + " (Total de correspondências: " + correspondenciasRecebidas.size() + ")";
+    return "Apartamento " + numeroAp + " (Total de correspondências: " + correspondenciasRecebida.size() + ")";
   }
   
   
