@@ -5,6 +5,7 @@
 
   import java.time.LocalDate; // Para trabalhar com datas de forma mais robusta
   import java.time.format.DateTimeFormatter; // Para formatar a data
+  import java.time.LocalTime; //para trablahar com hora
   import java.util.HashMap;    // Importa a classe HashMap
   import java.util.Map;        // Importa a interface Map
   import java.util.Scanner;    // Para ler a entrada do usuário
@@ -33,8 +34,9 @@ public class SistemaNotificacao{
     
     //obtem a data atual do sistema no dd/mm/yyyy
     String dataAtual = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));//localdate.now obtem a data atual, depois .format() utiliza o datetimeformatter para configurar no padrao informado.
-    
-    Correspondencia novaCorrespondencia = new Correspondencia(tipo, remetente, dataAtual);
+    String horaAtual = LocalTime.now().format(DateTimeFormatter.ofPattern("hh:mm"));
+
+    Correspondencia novaCorrespondencia = new Correspondencia(tipo, remetente, dataAtual, horaAtual);
 
     //adiciona correspondencia e imprime uma mensagem confirmação
     apto.adicionarCorrespondencia(novaCorrespondencia);
